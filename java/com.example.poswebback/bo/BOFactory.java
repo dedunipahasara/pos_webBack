@@ -2,6 +2,9 @@ package com.example.poswebback.bo;
 
 
 import com.example.poswebback.bo.impl.CustomerBoImpl;
+import com.example.poswebback.bo.impl.ItemBoImpl;
+import com.example.poswebback.bo.impl.OrderBOImpl;
+import com.example.poswebback.bo.impl.OrderDetailBOImpl;
 
 public class BOFactory {
     private static BOFactory boFactory;
@@ -17,6 +20,12 @@ public class BOFactory {
         switch (types) {
             case CUSTOMER:
                 return new CustomerBoImpl();
+            case ITEM:
+                return new ItemBoImpl();
+            case ORDERS:
+                return new OrderBOImpl();
+            case ORDERDETAILS:
+                return new OrderDetailBOImpl();
 
             default:
                 return null;
